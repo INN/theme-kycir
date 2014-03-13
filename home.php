@@ -106,7 +106,7 @@ $tags = of_get_option ('tag_display');
 		endif;
 		?>
 	</div>
-
+	<!--
 	<div class="signup span12">
 		<div class="explain span5">
 			<p><i class="icon-mail"></i>Sign up for our newsletter</p>
@@ -119,6 +119,7 @@ $tags = of_get_option ('tag_display');
 			</form>
 		</div>
 	</div>
+	-->
 	<div class="sub-stories span12">
 		<?php
 		$story_count = 0;
