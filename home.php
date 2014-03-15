@@ -106,20 +106,20 @@ $tags = of_get_option ('tag_display');
 		endif;
 		?>
 	</div>
-	<!--
+
 	<div class="signup span12">
 		<div class="explain span5">
 			<p><i class="icon-mail"></i>Sign up for our newsletter</p>
 		</div>
 		<div class="chevron span1"></div>
 		<div class="form span6">
-			<form action="http://aspenjournalism.us5.list-manage.com/subscribe/post?u=ab734cc5b8f8331177658268d&amp;id=8fd9b5716a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			<form action="http://kycir.us3.list-manage.com/subscribe/post?u=2020a220be1456f9d710d84cf&amp;id=901efefb0d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
 				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
 			</form>
 		</div>
 	</div>
-	-->
+
 	<div class="sub-stories span12">
 		<?php
 		$story_count = 0;
