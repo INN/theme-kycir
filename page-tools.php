@@ -21,7 +21,8 @@ get_header();
 				$args = array(
 					'post_parent'	=> $post->ID,
 					'post_type'		=> 'page',
-					'numberposts'	=> -1
+					'numberposts'	=> -1,
+					'post_status'	=> 'publish'
 				);
 				$children = get_children( $args );
 
