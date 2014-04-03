@@ -55,7 +55,8 @@ h4, h5,
 .entry-content h5.tag-list {
   letter-spacing: 1px;
 }
-p {
+p,
+address {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 21px;
@@ -369,6 +370,9 @@ ul.about-subnav li:last-child:after {
 }
 .river .ad {
   margin: 20px auto 0;
+  width: 300px;
+  min-height: 0;
+  height: 250px;
 }
 
 /********************

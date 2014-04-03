@@ -97,7 +97,7 @@ $tags = of_get_option ('tag_display');
 			<?php }
 			endwhile; ?>
 
-			<div class="ad" id='div-gpt-ad-1390966279948-1' style='width:300px; height:250px;'>
+			<div class="ad" id='div-gpt-ad-1390966279948-1'>
 				<script type='text/javascript'>
 				googletag.display('div-gpt-ad-1390966279948-1');
 				</script>
