@@ -432,7 +432,7 @@ h1.entry-title {
 .single .byline .author a {
   text-transform: uppercase;
 }
-.single .post-social {
+.single header .post-social {
   max-width: 800px;
   margin: 0 auto;
 }
