@@ -244,6 +244,8 @@ ul.about-subnav li:last-child:after {
   font-size: 36px;
   line-height: 1.15;
   margin-bottom: 8px;
+  clear: both;
+  width: 100%;
 }
 .top-story h2 a,
 .donate-btn a:hover {
@@ -255,16 +257,16 @@ ul.about-subnav li:last-child:after {
   margin-bottom: 10px;
 }
 .top-story p.photo-credit {
-  text-align: right;
-  font-size: 14px;
-  margin: -42px 0 0 0;
+  font-size: 12px;
+  margin: -12% 0 8px 0;
   padding: 3px 8px;
   color: #ccc;
   background-color: rgba(51, 51, 51, 0.85);
   display: block;
-  max-width: 60%;
+  max-width: 70%;
   width: auto;
   float: right;
+  text-align: right;
   position: relative;
   z-index: 1004;
 }
@@ -372,7 +374,6 @@ ul.about-subnav li:last-child:after {
   margin: 20px auto 0;
   width: 300px;
   min-height: 0;
-  height: 250px;
 }
 
 /********************
@@ -430,6 +431,10 @@ h1.entry-title {
 }
 .single .byline .author a {
   text-transform: uppercase;
+}
+.single .post-social {
+  max-width: 800px;
+  margin: 0 auto;
 }
 .pull-quote {
   font-size: 32px;
@@ -759,6 +764,9 @@ h3.recent-posts a.rss-link {
   .top-story p {
     font-size: 16px;
   }
+  .top-story p.photo-credit {
+    display: none;
+  }
   .sub-stories h3 {
     font-size: 19px;
   }
@@ -821,6 +829,9 @@ h3.recent-posts a.rss-link {
   }
   .navbar-inner {
     margin-top: 10px;
+  }
+  .top-story p.photo-credit {
+    display: none;
   }
   .sub-stories .span3 {
     clear: both;
