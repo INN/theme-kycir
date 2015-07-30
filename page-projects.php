@@ -17,9 +17,7 @@ get_header();
 				$tax_args = array(
 					'orderby' 	=> 'name',
 					'taxonomy' 	=> 'series',
-					'name'		=> 'term_id',
-					'id'		=> 'term_id'
-		    	);
+				);
 
 				$series = get_categories($tax_args);
 				foreach ( $series as $out ) {
