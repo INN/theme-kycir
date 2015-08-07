@@ -7,7 +7,7 @@
 function kycir_head() { ?>
 	<!--typekit-->
 	<script type="text/javascript" src="//use.typekit.net/zsh4siz.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 	<!--DFP-->
 	<script type='text/javascript'>
