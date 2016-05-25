@@ -45,6 +45,9 @@
 
 <body <?php body_class(); ?>>
 <div id="top"></div>
+<div class="capital-campaign">
+	<a href="http://campaign.louisvillepublicmedia.org"><img class="small-img" src="http://campaign.louisvillepublicmedia.org/wp-content/uploads/RYV16_lpm-app_640x202_inv.png"><img class="large-img" src="http://campaign.louisvillepublicmedia.org/wp-content/uploads/RYV16_940x120_inv.png"></a>
+</div>
 <div class="global-nav-bg">
 	<div class="global-nav">
 		<nav id="top-nav" class="span12">
