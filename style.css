@@ -1082,31 +1082,3 @@ h3.recent-posts a.rss-link {
     width: 50%;
   }
 }
-
-/* temporary styles for capital campaign banner */
-
-.capital-campaign {
-  width:100%;
-  background: #38004d;
-  text-align: center;
-}
-.large-img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-}
-.small-img {
-  display: none;
-  margin: 0 auto;
-  max-width:100%;
-}
-@media (max-width:640px) {
-  .small-img {
-    display: block;
-    margin: 0 auto;
-  }
-  .large-img {
-    display: none;
-    margin: 0 auto;
-  }
-}
