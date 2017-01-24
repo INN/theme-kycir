@@ -3,6 +3,7 @@
 /* This theme uses Adobe Typekit for a few custom fonts (https://typekit.com).
  * The ID is unique to this particular site so if you wanted to use this theme for another site
  * you would need to register with Typekit and get your own ID.
+ * @since 0.1.0
  */
 function kycir_head() { ?>
 	<!--typekit-->
@@ -33,21 +34,35 @@ function kycir_head() { ?>
 }
 add_action( 'wp_head', 'kycir_head' );
 
-// Single sidebar is not used in this theme so we unregister it to avoid confusion
+/**
+ * Include compiled style.css
+ * @since 0.1.1
+ */
+function largo_child_stylesheet() {
+	wp_dequeue_style( 'largo-child-styles' );
+	wp_enqueue_style( 'largoproject', get_stylesheet_directory_uri() . '/css/style.css' );
+}
+add_action( 'wp_enqueue_scripts', 'largo_child_stylesheet', 20 );
+
+/*
+ * Single sidebar is not used in this theme so we unregister it to avoid confusion
+ * @since 0.1.0
+ */
 function kycir_sidebars() {
 	unregister_sidebar( 'sidebar-single');
 }
 add_action( 'widgets_init', 'kycir_sidebars', 11 );
 
-//Setup the image sizes and width variables
-define( 'FULL_WIDTH', 1170 );
-define( 'LARGE_WIDTH', 800 );
-define( 'MEDIUM_WIDTH', 400 );
-
-$content_width = 800;
-
+/**
+ * Custom image sizes
+ * @since 0.1.0
+ */
 add_image_size( 'homepage_thumb', 800, 600, true );
 
+/**
+ * A wrapper around the Largo INN RSS Widget
+ * @since 0.1.0
+ */
 function inn_stories() {
 	the_widget( 'largo_INN_RSS_widget', array(
 		'title' 		=> __('Stories From Other INN Members', 'largo'),
@@ -57,58 +72,29 @@ function inn_stories() {
 }
 add_action( 'largo_after_post_footer', 'inn_stories' );
 
+/**
+ * Custom function to get post thumbnails
+ * @since 0.1.0
+ */
 function kycir_get_post_thumbnail_caption() {
-	if ( $thumb = get_post_thumbnail_id() )
+	if ( $thumb = get_post_thumbnail_id() ) {
 		return get_post( $thumb )->post_excerpt;
+	}
 }
 
+/**
+ * Add excerpt support to pages
+ * @since 0.1.0
+ */
 function kycir_add_excerpts_to_pages() {
-     add_post_type_support( 'page', 'excerpt' );
+	add_post_type_support( 'page', 'excerpt' );
 }
 add_action( 'init', 'kycir_add_excerpts_to_pages' );
 
-// New functionality that will be in the next release of the Largo parent theme, included here a bit early
-
 /**
- * Add fields to Co-Authors Plus Guest Author
+ * Plugging a largo function because ???
+ * @since 0.1.0
  */
-add_filter( 'coauthors_guest_author_fields', 'kycir_filter_guest_author_fields', 10, 2 );
-function kycir_filter_guest_author_fields( $fields_to_return, $groups ) {
-
-	if ( in_array( 'all', $groups ) || in_array( 'contact-info', $groups ) ) {
-		$fields_to_return[] = array(
-					'key'      => 'twitter',
-					'label'    => 'Twitter<br><em>https://twitter.com/username<em>',
-					'group'    => 'contact-info',
-				);
-		$fields_to_return[] = array(
-					'key'      => 'fb',
-					'label'    => 'Facebook<br><em>https://www.facebook.com/username<em>',
-					'group'    => 'contact-info',
-				);
-		$fields_to_return[] = array(
-					'key'      => 'linkedin',
-					'label'    => 'LinkedIn<br><em>http://www.linkedin.com/in/username<em>',
-					'group'    => 'contact-info',
-				);
-		$fields_to_return[] = array(
-					'key'      => 'googleplus',
-					'label'    => 'Google+<br><em>https://plus.google.com/userID/<em>',
-					'group'    => 'contact-info',
-				);
-	}
-	if ( in_array( 'all', $groups ) || in_array( 'name', $groups ) ) {
-		$fields_to_return[] = array(
-					'key'      => 'organization',
-					'label'    => 'Organization',
-					'group'    => 'name',
-				);
-
-	}
-
-	return $fields_to_return;
-}
-
 function largo_byline( $echo = true ) {
 	global $post;
 	$values = get_post_custom( $post->ID );
@@ -159,6 +145,11 @@ function largo_byline( $echo = true ) {
 	return $output;
 }
 
+
+/**
+ * Plugging a largo function because ???
+ * @since 0.1.0
+ */
 function largo_content_nav( $nav_id ) {
 	global $wp_query;
 
