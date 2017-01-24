@@ -35,12 +35,12 @@ function kycir_head() { ?>
 add_action( 'wp_head', 'kycir_head' );
 
 /**
- * Include compiled style.css
+ * Include compiled child.css
  * @since 0.1.1
  */
 function largo_child_stylesheet() {
 	wp_dequeue_style( 'largo-child-styles' );
-	wp_enqueue_style( 'largoproject', get_stylesheet_directory_uri() . '/css/style.css' );
+	wp_enqueue_style( 'largoproject', get_stylesheet_directory_uri() . '/css/child.css' );
 }
 add_action( 'wp_enqueue_scripts', 'largo_child_stylesheet', 20 );
 
