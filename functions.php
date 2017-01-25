@@ -44,33 +44,11 @@ function largo_child_stylesheet() {
 }
 add_action( 'wp_enqueue_scripts', 'largo_child_stylesheet', 20 );
 
-/*
- * Single sidebar is not used in this theme so we unregister it to avoid confusion
- * @since 0.1.0
- */
-function kycir_sidebars() {
-	unregister_sidebar( 'sidebar-single');
-}
-add_action( 'widgets_init', 'kycir_sidebars', 11 );
-
 /**
  * Custom image sizes
  * @since 0.1.0
  */
 add_image_size( 'homepage_thumb', 800, 600, true );
-
-/**
- * A wrapper around the Largo INN RSS Widget
- * @since 0.1.0
- */
-function inn_stories() {
-	the_widget( 'largo_INN_RSS_widget', array(
-		'title' 		=> __('Stories From Other INN Members', 'largo'),
-		'num_posts'		=> 3
-		)
-	);
-}
-add_action( 'largo_after_post_footer', 'inn_stories' );
 
 /**
  * Custom function to get post thumbnails
@@ -90,61 +68,6 @@ function kycir_add_excerpts_to_pages() {
 	add_post_type_support( 'page', 'excerpt' );
 }
 add_action( 'init', 'kycir_add_excerpts_to_pages' );
-
-/**
- * Plugging a largo function because ???
- * @since 0.1.0
- */
-function largo_byline( $echo = true ) {
-	global $post;
-	$values = get_post_custom( $post->ID );
-
-	if ( function_exists( 'get_coauthors' ) && !isset( $values['largo_byline_text'] ) ) {
-		$coauthors = get_coauthors( $post->ID );
-		count($coauthors);
-		foreach( $coauthors as $author ) {
-			$byline_text = $author->display_name;
-			if ( $org = $author->organization )
-				$byline_text .= ' (' . $org . ')';
-
-			$out[]= sprintf('<a class="url fn n" href="/author/%1$s" title="Read All Posts By %2$s" rel="author">%3$s</a>',
-				$author->user_login,
-				$author->display_name,
-				$byline_text
-			);
-		}
-
-		if ( count($out) > 1 ) {
-			end($out);
-			$key = key($out);
-			reset($array);
-			$authors = implode( ', ', array_slice( $out, 0, -1 ) );
-			$authors .= ' <span class="and">and</span> ' . $out[$key];
-		} else {
-			$authors = $out[0];
-		}
-
-	} else {
-		$authors = largo_author_link( false );
-	}
-
-	$output = sprintf( __('<span class="by-author"><span class="by">By:</span> <span class="author vcard" itemprop="author">%1$s</span></span><span class="sep"> | </span><time class="entry-date updated dtstamp pubdate" datetime="%2$s">%3$s</time>', 'largo'),
-		$authors,
-		esc_attr( get_the_date( 'c' ) ),
-		largo_time( false )
-	);
-
-	if ( current_user_can( 'edit_post', $post->ID ) )
-		$output .=  sprintf( __('<span class="sep"> | </span><span class="edit-link"><a href="%1$s">Edit This Post</a></span>', 'largo'), get_edit_post_link() );
-
-	if ( is_single() && of_get_option( 'clean_read' ) === 'byline' )
-	 	$output .=	__('<a href="#" class="clean-read">View as "Clean Read"</a>', 'largo');
-
-	if ( $echo )
-		echo $output;
-	return $output;
-}
-
 
 /**
  * Plugging a largo function because ???
