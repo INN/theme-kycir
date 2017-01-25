@@ -15,9 +15,9 @@ $tags = of_get_option ('tag_display');
 		$topstory = largo_get_featured_posts( array(
 			'tax_query' => array(
 				array(
-					'taxonomy' 	=> 'prominence',
-					'field' 	=> 'slug',
-					'terms' 	=> 'top-story'
+					'taxonomy' => 'prominence',
+					'field' => 'slug',
+					'terms' => 'top-story'
 				)
 			),
 			'showposts' => 1
@@ -43,8 +43,8 @@ $tags = of_get_option ('tag_display');
 				?>
 				<div class="top-story-copy-block">
 					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				    <?php largo_excerpt( $post, 4, false ); ?>
-				    <h5 class="byline"><?php largo_byline(); ?></h5>
+					<?php largo_excerpt( $post, 4, false ); ?>
+					<h5 class="byline"><?php largo_byline(); ?></h5>
 				</div>
 			<?php endwhile;
 		endif; // end top story ?>
@@ -53,10 +53,10 @@ $tags = of_get_option ('tag_display');
 	<div class="river span4">
 		<?php
 		$args = array(
-			'post_status'	=> 'publish',
-			'post_type'		=> array( 'post', 'argolinks' ),
-			'showposts'		=> 6,
-			'post__not_in' 	=> $ids
+			'post_status' => 'publish',
+			'post_type' => array( 'post', 'argolinks' ),
+			'showposts' => 6,
+			'post__not_in' => $ids
 			);
 		if ( of_get_option('num_posts_home') )
 			$args['posts_per_page'] = of_get_option('num_posts_home');
@@ -87,10 +87,10 @@ $tags = of_get_option ('tag_display');
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 						<header>
-						 	<h5 class="top-tag"><?php largo_categories_and_tags( 1 ); ?></h5>
-					 		<h2 class="entry-title">
-					 			<a href="<?php the_permalink(); ?>" title="Permalink to <?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
-					 		</h2>
+							<h5 class="top-tag"><?php largo_categories_and_tags( 1 ); ?></h5>
+							<h2 class="entry-title">
+								<a href="<?php the_permalink(); ?>" title="Permalink to <?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+							</h2>
 						</header><!-- / entry header -->
 					</article><!-- #post-<?php the_ID(); ?> -->
 
@@ -129,23 +129,23 @@ $tags = of_get_option ('tag_display');
 		$substories = largo_get_featured_posts( array(
 			'tax_query' => array(
 				array(
-					'taxonomy' 	=> 'prominence',
-					'field' 	=> 'slug',
-					'terms' 	=> 'homepage-featured'
+					'taxonomy' => 'prominence',
+					'field' => 'slug',
+					'terms' => 'homepage-featured'
 				)
 			),
-			'showposts'		=> 4,
-			'post__not_in' 	=> $ids
+			'showposts' => 4,
+			'post__not_in' => $ids
 		) );
 		if ( $substories->have_posts() ) {
 			while ( $substories->have_posts() ) : $substories->the_post(); $ids[] = get_the_ID(); $story_count++; ?>
 				<div class="story span3 <?php echo 'story-' . $story_count; ?>">
-			        <?php if ( largo_has_categories_or_tags() && $tags === 'top' ) : ?>
-			        	<h5 class="top-tag"><?php largo_categories_and_tags(1); ?></h5>
-			        <?php endif; ?>
-			        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'homepage_thumb' ); ?></a>
-			        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-			    </div>
+					<?php if ( largo_has_categories_or_tags() && $tags === 'top' ) : ?>
+						<h5 class="top-tag"><?php largo_categories_and_tags(1); ?></h5>
+					<?php endif; ?>
+					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'homepage_thumb' ); ?></a>
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				</div>
 		<?php
 			endwhile;
 		}
@@ -155,9 +155,9 @@ $tags = of_get_option ('tag_display');
 		if ( $story_count < 4 ) {
 			$recent_posts = 4 - $story_count;
 			$args = array(
-				'post_status'	=> 'publish',
-				'showposts'		=> $recent_posts,
-				'post__not_in' 	=> $ids
+				'post_status' => 'publish',
+				'showposts' => $recent_posts,
+				'post__not_in' => $ids
 				);
 			// in some cases we might want to limit or filter this loop by category, let's add that arg if set in the theme options
 			if ( of_get_option('cats_home') )
@@ -166,12 +166,12 @@ $tags = of_get_option ('tag_display');
 			if ( $query->have_posts() ) {
 				while ( $query->have_posts() ) : $query->the_post(); $ids[] = get_the_ID(); $story_count++; ?>
 						<div class="story span3 <?php echo 'story-' . $story_count; ?>">
-				        	<?php if ( largo_has_categories_or_tags() && $tags === 'top' ) : ?>
-				        		<h5 class="top-tag"><?php largo_categories_and_tags(1); ?></h5>
-				        	<?php endif; ?>
-				        	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'homepage_thumb'); ?></a>
-				        	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				        </div>
+							<?php if ( largo_has_categories_or_tags() && $tags === 'top' ) : ?>
+								<h5 class="top-tag"><?php largo_categories_and_tags(1); ?></h5>
+							<?php endif; ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'homepage_thumb'); ?></a>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						</div>
 					<?php
 				endwhile;
 			}
