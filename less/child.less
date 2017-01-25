@@ -76,28 +76,12 @@ address {
 /********************
 	Single Posts
 *********************/
-.single header,
-.page header {
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  float: none;
-}
-.single .entry-content,
-.page .entry-content {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  float: none;
-}
-.single #content.span8,
-.page #content.span8 {
-  width: 100%;
-}
+
 .single #content header,
 .page #content header {
   margin-bottom: 48px;
 }
+
 h1.entry-title {
   font-size: 64px;
   line-height: 1.15;
@@ -146,19 +130,6 @@ h1.entry-title {
 .entry-content .alignleft,
 .entry-content .align-left {
   margin-left: -100px;
-}
-.single footer,
-.single .largo-INN-RSS,
-.single #nav-below,
-.single #comments,
-.single #disqus_thread {
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto 24px;
-  float: none;
-}
-.single #disqus_thread {
-  max-width: 880px;
 }
 .post-social {
   border: none;
@@ -288,11 +259,6 @@ h3.recent-posts a.rss-link {
 @media (min-width: 769px) and (max-width: 978px) {
   .global-nav,
   #page,
-  #site-footer {
-    width: 95%;
-    max-width: 95%;
-    padding: 0 2.5%;
-  }
   .top-story h2 {
     font-size: 42px;
   }
@@ -308,24 +274,29 @@ h3.recent-posts a.rss-link {
   .river {
     margin-bottom: 24px;
   }
-  .signup .chevron {
-    display: none;
+
+  // newsletter signup stuff
+  .signup {
+    .chevron {
+      display: none;
+    }
+    .chevron {
+      border: 0;
+    }
+    .span5,
+    .span6 {
+      float: none;
+      clear: both;
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .span5 i {
+      float: none;
+    }
   }
-  .signup .chevron {
-    border: 0;
-  }
-  .signup .span5,
-  .signup .span6 {
-    float: none;
-    clear: both;
-    width: 100%;
-    text-align: center;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .signup .span5 i {
-    float: none;
-  }
+
   .feed .post-lead h5 {
     font-size: 16px;
   }
@@ -406,9 +377,6 @@ h3.recent-posts a.rss-link {
   .top-story p {
     font-size: 16px;
     margin-bottom: 0;
-  }
-  #site-footer .span4 {
-    min-height: 0;
   }
   .feed.span3 {
     clear: both;
@@ -535,7 +503,7 @@ h3.recent-posts a.rss-link {
     max-width: 65%;
   }
   .stories .river article header {
-	max-width: 100%;
+    max-width: 100%;
   }
   .stories h2.entry-title {
     font-size: 18px !important;
