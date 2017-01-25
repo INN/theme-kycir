@@ -56,7 +56,8 @@ address {
   font-weight: 300;
   font-size: 21px;
 }
-ul, ol {
+.entry-content ul,
+.entry-content ol {
   font-size: 19px;
 }
 #content {
@@ -269,51 +270,6 @@ h3.recent-posts a.rss-link {
 }
 
 @media (max-width: 1060px) {
-  .nav-collapse,
-  .nav-collapse.collapse {
-    overflow: hidden !important;
-    height: 0 !important;
-  }
-  .nav-collapse.collapse.in {
-    overflow: visible !important;
-    height: auto !important;
-  }
-  .navbar .btn-navbar {
-    display: block;
-  }
-  .nav-collapse {
-    clear: both;
-  }
-  .nav-collapse .nav {
-    float: none;
-    margin: 0 0 12px;
-    padding-top: 8px;
-  }
-  .nav-collapse .nav li:first-child {
-    border-top: 1px solid #666;
-    padding-top: 10px;
-  }
-  .nav-collapse .nav > li,
-  .nav-collapse .nav > span > li {
-    float: none;
-    display: list-item;
-  }
-  .nav-collapse,
-  .nav-collapse.collapse {
-    overflow: hidden !important;
-    height: 0 !important;
-  }
-  .nav-collapse.collapse.in {
-    display: inherit !important;
-    overflow: visible !important;
-    height: auto !important;
-  }
-  .nav.hidden-phone {
-    display: none !important;
-  }
-  .navbar-inner {
-    margin-top: 35px;
-  }
   .entry-content .right,
   .entry-content .alignright {
     max-width: 40%;
@@ -385,30 +341,6 @@ h3.recent-posts a.rss-link {
   }
 }
 @media (max-width: 768px) {
-  .global-nav {
-    width: 95;
-    max-width: 95;
-    padding: 0 2.5%;
-  }
-  #page,
-  #site-footer {
-    width: 90%;
-    max-width: 90%;
-    padding: 0 5%;
-  }
-  header#main .logo img {
-    height: 60px;
-    margin: 0 20px;
-  }
-  .org-logo img.lpm {
-    display: none;
-  }
-  .navbar .container {
-    width: auto;
-  }
-  .navbar-inner {
-    margin-top: 10px;
-  }
   .top-story p.photo-credit {
     display: none;
   }
@@ -484,9 +416,6 @@ h3.recent-posts a.rss-link {
     margin-left: 0;
     margin-bottom: 24px;
   }
-  p {
-    font-size: 21px;
-  }
   .entry-content .right,
   .entry-content .alignright,
   .entry-content .left,
@@ -520,11 +449,6 @@ h3.recent-posts a.rss-link {
     border-top: 8px solid #555;
     border-bottom: 4px solid #555;
     text-align: center;
-  }
-  .largo-INN-RSS ul li p.byline {
-    display: block;
-    clear: both;
-    margin-left: 0;
   }
   .signup .span5,
   .signup .span6 {
@@ -563,22 +487,6 @@ h3.recent-posts a.rss-link {
   }
 }
 @media (max-width: 480px) {
-  .navbar .btn-navbar {
-    padding: 10px 8px;
-  }
-  .navbar .btn-navbar .icon-bar {
-    width: 32px;
-    height: 4px;
-  }
-  .btn-navbar .icon-bar+.icon-bar {
-    margin-top: 5px;
-  }
-  ul.about-subnav li {
-    display: block;
-  }
-  ul.about-subnav li:after {
-    content: none;
-  }
   h1.entry-title,
   h1.page-title {
     font-size: 34px;
