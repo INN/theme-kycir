@@ -212,20 +212,6 @@ header#main .header-inside {
   color: #fff;
   background-color: #555;
 }
-ul.about-subnav {
-  text-align: center;
-  margin-left: 0;
-}
-ul.about-subnav li {
-  display: inline;
-  white-space: nowrap;
-}
-ul.about-subnav li:after {
-  content: " | ";
-}
-ul.about-subnav li:last-child:after {
-  content: none;
-}
 
 /******************
 	HOMEPAGE
@@ -268,7 +254,6 @@ ul.about-subnav li:last-child:after {
   float: right;
   text-align: right;
   position: relative;
-  z-index: 1004;
 }
 .top-story p.photo-credit .credit {
   display: block;
