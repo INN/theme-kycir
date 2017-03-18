@@ -68,3 +68,13 @@ function kycir_add_excerpts_to_pages() {
 	add_post_type_support( 'page', 'excerpt' );
 }
 add_action( 'init', 'kycir_add_excerpts_to_pages' );
+
+/**
+ * Don't remove leading images in posts when the lead image matches the featured image
+ * @see largo_remove_hero
+ * @since Largo 0.5.5.3
+ */
+function kycir_largo_remove_hero( $whether, $post = null ) {
+	return false;
+}
+add_action( 'largo_remove_hero', 'kycir_largo_remove_hero' );
