@@ -121,7 +121,7 @@ $tags = of_get_option ('tag_display');
 		</div>
 	</div>
 
-	<div class="sub-stories span12">
+	<div class="sub-stories clearfix">
 		<?php
 		$story_count = 0;
 		// get three stories from the homepage-featured term in the prominence taxonomy (with photos)
@@ -133,7 +133,7 @@ $tags = of_get_option ('tag_display');
 					'terms' => 'homepage-featured'
 				)
 			),
-			'showposts' => 4,
+			'showposts' => 8,
 			'post__not_in' => $ids
 		) );
 		if ( $substories->have_posts() ) {
