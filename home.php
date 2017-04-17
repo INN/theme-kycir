@@ -95,15 +95,14 @@ $tags = of_get_option ('tag_display');
 					</article><!-- #post-<?php the_ID(); ?> -->
 
 			<?php }
-			endwhile; ?>
-
-			<div class="ad" id='div-gpt-ad-1390966279948-1'>
-				<script type='text/javascript'>
-				googletag.display('div-gpt-ad-1390966279948-1');
-				</script>
-			</div>
-		<?php
+			endwhile;
 		endif;
+		?>
+	</div>
+
+	<div class="homepage_ads clearfix">
+		<?php
+			dynamic_sidebar( 'homepage_ads' );
 		?>
 	</div>
 

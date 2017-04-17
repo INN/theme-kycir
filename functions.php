@@ -71,10 +71,27 @@ add_action( 'init', 'kycir_add_excerpts_to_pages' );
 
 /**
  * Don't remove leading images in posts when the lead image matches the featured image
- * @see largo_remove_hero
+ * @see largo_remove_hero https://github.com/INN/Largo/blob/v0.5.5.3/inc/post-templates.php#L141
  * @since Largo 0.5.5.3
  */
 function kycir_largo_remove_hero( $whether, $post = null ) {
 	return false;
 }
 add_action( 'largo_remove_hero', 'kycir_largo_remove_hero' );
+
+/**
+ * register a sidebar for the homepage for ads widgets just above the newsletter signup area
+ * @since 0.1.0
+ */
+function kycir_home_sidebars() {
+	register_sidebar( array(
+			'name' 		=> __( 'Home Above Newsletter Signup' , 'kycir' ),
+			'description' 	=> __( 'This appears above the newsletter signup prompt on the homepage.', 'kycir' ),
+			'id' 		=> 'homepage_ads',
+			'before_widget' => '<aside id="%1$s" class="%2$s clearfix">',
+			'after_widget' 	=> "</aside>",
+			'before_title' 	=> '<h3 class="widgettitle">',
+			'after_title' 	=> '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'kycir_home_sidebars', 20 );
