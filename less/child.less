@@ -15,25 +15,21 @@ a:hover,
 #site-header {
   aside {
     button {
-      background: @white;
-      border: 4px solid @primary;
-      line-height: 1;
-      padding: 1em 1.5em;
-      color: @primary;
-      font-family: @proxima;
-      font-weight: bold;
-      text-transform: uppercase;
+      min-width: 120px;
+      padding: 10px;
+      border: 1px solid @black;
+      font-weight: normal;
 
       &:hover {
-        background:saturate(@primary,30%);
         color: @white;
+        background-color: @primary;
       }
 
-      &.secondary {
-        background: @secondary;
+      .secondary {
+        color: @white;
+        background-color: @secondary;
         &:hover {
-          background:saturate(@primary,30%);
-          color: @white;
+          background-color: @primary;
         }
       }
     }
