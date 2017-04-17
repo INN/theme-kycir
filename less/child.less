@@ -12,6 +12,33 @@ a:hover,
 .largo-INN-RSS .widgettitle a:hover {
   color: #666;
 }
+#site-header {
+  aside {
+    button {
+      background: @white;
+      border: 4px solid @primary;
+      line-height: 1;
+      padding: 1em 1.5em;
+      color: @primary;
+      font-family: @proxima;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:hover {
+        background:saturate(@primary,30%);
+        color: @white;
+      }
+
+      &.secondary {
+        background: @secondary;
+        &:hover {
+          background:saturate(@primary,30%);
+          color: @white;
+        }
+      }
+    }
+  }
+}
 #site-footer {
   a {
     color: #ddd;
